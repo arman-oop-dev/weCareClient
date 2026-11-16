@@ -1,26 +1,47 @@
 @import "tailwindcss";
+@import "@heroui/styles";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Light Theme */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+
+  --brand-primary: #ff347d;
+  --brand-secondary: #9d0063;
+
+  --brand-content-primary: #1c1d20;
+  --brand-content-secondary: #52525b;
+
+  --brand-background: #ffffff;
+  --brand-foreground: #ffffff;
 }
 
+/* Dark Theme */
+.dark {
+  color-scheme: dark;
+
+  --brand-primary: #ff347d;
+  --brand-secondary: #e054a8;
+
+  --brand-content-primary: #f3f4f6;
+  --brand-content-secondary: #a1a1aa;
+
+  --brand-background: #15151b;
+  --brand-foreground: #202027;
+}
+
+/* Tailwind Theme Configuration */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+  --color-primary: var(--brand-primary);
+  --color-secondary: var(--brand-secondary);
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  --color-content-primary: var(--brand-content-primary);
+  --color-content-secondary: var(--brand-content-secondary);
+
+  --color-background: var(--brand-background);
+  --color-foreground: var(--brand-foreground);
 }
