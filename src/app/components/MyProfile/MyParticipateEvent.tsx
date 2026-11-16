@@ -3,6 +3,7 @@
 import { Alert, Button } from "@heroui/react";
 
 import { getEventbyUserParticipations } from "@/app/api/getProductofUserAPI";
+import { JoinEventData } from "@/app/lib/Interface/Menu";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -23,7 +24,7 @@ const formatDate = (date: string) =>
   });
 
 const MyParticipateEvent = () => {
-  const [events, setEvents] = useState<EventData[]>([]);
+  const [events, setEvents] = useState<JoinEventData[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 

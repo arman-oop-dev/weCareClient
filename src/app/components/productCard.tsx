@@ -3,9 +3,10 @@ import Link from "next/link";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { FaMapLocation } from "react-icons/fa6";
 import { MdCategory } from "react-icons/md";
+import { ProductData } from "../api/ProductAPI";
 
 interface ProductCardProps {
-  programs: Product[];
+  programs: ProductData[];
 }
 
 const formatDate = (date: string) =>

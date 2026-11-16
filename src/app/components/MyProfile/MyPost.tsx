@@ -1,6 +1,6 @@
 "use client";
 
-import { getEventbyUser, type EventData } from "@/app/api/getProductofUserAPI";
+import { getEventbyUser } from "@/app/api/getProductofUserAPI";
 import { Alert, Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,6 +12,7 @@ import { IoAlertCircleOutline } from "react-icons/io5";
 import { MdCategory } from "react-icons/md";
 import DeleteEvent from "./deleteEvent";
 import UpdateEvent from "./UpdateEvent";
+import { JoinEventData } from "./MyParticipateEvent";
 
 const formatDate = (date: string) =>
   new Date(date).toLocaleDateString("en-US", {
@@ -21,7 +22,7 @@ const formatDate = (date: string) =>
   });
 
 const MyPost = () => {
-  const [events, setEvents] = useState<EventData[]>([]);
+  const [events, setEvents] = useState<JoinEventData[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 

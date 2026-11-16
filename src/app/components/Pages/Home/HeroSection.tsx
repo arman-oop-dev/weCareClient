@@ -74,14 +74,12 @@ export default function Hero() {
               {currentSlide.description}
             </p>
 
-            <Button
-              as={Link}
-              href={currentSlide.href}
-              className="mt-6 h-11 bg-secondary px-6 font-semibold text-white hover:bg-secondary"
-            >
-              {currentSlide.button}
-              <span aria-hidden="true"> ↗</span>
-            </Button>
+            <Link href="/programmes">
+              <Button className="mt-6 h-11 bg-secondary px-6 font-semibold text-white hover:bg-secondary">
+                See All Programs
+                <span aria-hidden="true"> ↗</span>
+              </Button>
+            </Link>
           </div>
 
           {/* Slide Indicators */}
