@@ -1,16 +1,5 @@
+import { EventData, JoinEventData } from "@/app/lib/Interface/Menu";
 import { authClient } from "../lib/auth-client";
-interface EventData {
-  _id: string;
-  title: string;
-  description: string;
-  eventType: string;
-  thumbnail: string;
-  location: string;
-  eventDate: string;
-  creatorID: string;
-  creatorEmail: string;
-  creatorName: string;
-}
 
 export const getEventbyUser = async (): Promise<EventData[]> => {
   const { data: session } = await authClient.getSession();
@@ -43,15 +32,15 @@ export const getEventbyUser = async (): Promise<EventData[]> => {
   }
 };
 
-export const getEventbyUserParticipations = async (): Promise<EventData[]> => {
+export const getEventbyUserParticipations = async (): Promise<
+  JoinEventData[]
+> => {
   const { data: session } = await authClient.getSession();
-  if (!session) {
-    throw new Error("Unauthorized");
-  }
+
   const { data: tokenData } = await authClient.token();
   if (!tokenData?.token) throw new Error("Unauthorized");
 
-  const joinUserID = session.user.id;
+  const joinUserID = session?.user.id;
 
   try {
     //   events/participations/:joinUserID

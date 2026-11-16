@@ -39,7 +39,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       suppressHydrationWarning
     >
-      <body className="flex min-h-screen flex-col bg-background text-content-primary transition-colors duration-300">
+      <body className="flex min-h-screen flex-col bg-background">
         <Providers>
           <Toaster
             position="top-center"
