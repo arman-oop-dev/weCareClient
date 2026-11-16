@@ -3,7 +3,7 @@ import { betterAuth } from "better-auth";
 import { jwt } from "better-auth/plugins";
 import { MongoClient } from "mongodb";
 const client = new MongoClient(
-  (process.env.DB_URL as string) || "http://localhost:3000/",
+  (process.env.DB_URL as string),
 );
 const db = client.db("wecare");
 export const auth = betterAuth({
