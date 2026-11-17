@@ -7,7 +7,7 @@ const AllProgrammes = async () => {
   const allPrograms = await getProductAPI();
 
   return (
-    <main className="min-h-screen">
+    <section className="min-h-screen">
       <section className="container mx-auto px-4 pt-12 pb-4 text-center">
         <p className="mb-2 text-sm font-semibold uppercase tracking-[3px] text-primary">
           Explore Opportunities
@@ -26,7 +26,7 @@ const AllProgrammes = async () => {
       <Suspense fallback={<EventGridSkeleton />}>
         <ProductCard programs={allPrograms} />
       </Suspense>
-    </main>
+    </section>
   );
 };
 

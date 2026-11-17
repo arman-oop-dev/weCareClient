@@ -2,12 +2,14 @@ import { mongodbAdapter } from "@better-auth/mongo-adapter";
 import { betterAuth } from "better-auth";
 import { jwt } from "better-auth/plugins";
 import { MongoClient } from "mongodb";
-const client = new MongoClient(
-  (process.env.DB_URL as string),
-);
+const client = new MongoClient(process.env.DB_URL as string);
 const db = client.db("wecare");
 export const auth = betterAuth({
   baseURL: process.env.BETTER_AUTH_URL,
+  trustedOrigins: [
+    "http://localhost:3000",
+    "https://wecare-nine-henna.vercel.app",
+  ],
   database: mongodbAdapter(db, {
     client,
   }),

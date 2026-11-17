@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# weCare – Community Support & Event Management Platform
 
-## Getting Started
+🌐 **Live Website:** [https://wecare-nine-henna.vercel.app/](https://wecare-nine-henna.vercel.app/)
 
-First, run the development server:
+## 📖 About the Project
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**weCare** is a community-driven platform designed to bring people together through meaningful events, participation, and social engagement. It allows users to create and manage community events, discover opportunities to participate, and connect with others who share similar interests.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The platform aims to make community involvement easier by providing a simple, user-friendly experience for event creation, management, and participation.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✨ Key Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **User Authentication:** Secure user registration and login functionality to provide a personalized experience.
+- **Create Events:** Users can create community events by providing essential details such as title, description, date, location, and event type.
+- **Explore Events:** Browse available community events and discover opportunities to get involved.
+- **Event Participation:** Users can join events and send participation requests to event organizers.
+- **My Events Dashboard:** Manage created events and keep track of personal event activities.
+- **Event Management:** Organizers can update or delete their events whenever necessary.
+- **User-Friendly Interface:** Clean, responsive, and intuitive design for a smooth browsing experience.
+- **Community Engagement:** Encourages people to connect, collaborate, and contribute to their communities.
 
-## Learn More
+## 🛠️ Technologies Used
 
-To learn more about Next.js, take a look at the following resources:
+- **Frontend:** Next.js, React.js, TypeScript
+- **Styling:** Tailwind CSS, HeroUI
+- **Authentication:** Better Auth
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB
+- **Deployment:** Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌍 Live Demo
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Experience the platform here:
 
-## Deploy on Vercel
+**[Visit weCare](https://wecare-nine-henna.vercel.app/)**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🎯 Project Goal
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The main goal of **weCare** is to encourage community participation and make organizing and joining meaningful events easier. Through a simple digital platform, we aim to create opportunities for people to support one another and build stronger communities.
+
+---
+
+**weCare – Connect, Participate, and Make a Difference. ❤️**

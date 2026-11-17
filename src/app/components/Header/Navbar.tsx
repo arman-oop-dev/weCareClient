@@ -2,7 +2,6 @@ import { Menu } from "@/app/lib/Interface/Menu";
 import Image from "next/image";
 import Link from "next/link";
 import LoginComponent from "./Login";
-import ThemeToggle from "./ThemeToggle";
 import Logo from "/public/media/logo.svg";
 
 const HEADER_MENU: Menu[] = [{ label: "Programmes", href: "/programmes" }];
@@ -49,7 +48,7 @@ const Navbar = () => {
           aria-label="User navigation"
           className="flex items-center justify-end gap-2 sm:gap-3"
         >
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
           <LoginComponent />
         </nav>
       </div>

@@ -3,16 +3,17 @@ export interface Menu {
   href: string;
 }
 
-export interface EventData {
+export interface ProductData {
   _id: string;
-  joinUserID: string;
-  creatorID: string;
   title: string;
   description: string;
   eventType: string;
   thumbnail: string;
   location: string;
   eventDate: string;
+  creatorID: string;
+  creatorEmail: string;
+  creatorName: string;
 }
 
 export interface JoinEventData {

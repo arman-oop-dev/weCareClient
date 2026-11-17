@@ -5,7 +5,6 @@ import { Toaster } from "react-hot-toast";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Header/Navbar";
 import "./globals.css";
-import Providers from "./providers";
 
 const fontOutfit = Outfit({
   variable: "--font-outfit",
@@ -39,28 +38,28 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       suppressHydrationWarning
     >
-      <body className="flex min-h-screen flex-col">
-        <Providers>
-          <Toaster
-            position="top-center"
-            reverseOrder={false}
-            toastOptions={{
-              style: {
-                background: "var(--brand-foreground)",
-                color: "var(--brand-content-primary)",
-                border: "1px solid var(--brand-content-secondary)",
-              },
-            }}
-          />
+      <body className="flex min-h-screen flex-col" cz-shortcut-listen="true">
+        <Toaster
+          position="top-center"
+          reverseOrder={false}
+          toastOptions={{
+            style: {
+              background: "var(--brand-foreground)",
+              color: "var(--brand-content-primary)",
+              border: "1px solid var(--brand-content-secondary)",
+            },
+          }}
+        />
 
-          <Navbar />
+        <Navbar />
 
-          <main className="flex-1 bg-background transition-colors duration-300">
-            {children}
-          </main>
+        <main className="flex-1 bg-background transition-colors duration-300">
+          {/* <ThemeProvider attribute="class" enableSystem defaultTheme="system"> */}
+          {children}
+          {/* </ThemeProvider> */}
+        </main>
 
-          <Footer />
-        </Providers>
+        <Footer />
       </body>
     </html>
   );

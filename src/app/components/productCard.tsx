@@ -3,13 +3,13 @@ import Link from "next/link";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { FaMapLocation } from "react-icons/fa6";
 import { MdCategory } from "react-icons/md";
-import { ProductData } from "../api/ProductAPI";
+import { ProductData } from "../lib/Interface/Menu";
 
 interface ProductCardProps {
   programs: ProductData[];
 }
 
-const formatDate = (date: string) =>
+export const formatDate = (date: string) =>
   new Date(date).toLocaleDateString("en-US", {
     day: "numeric",
     month: "short",
