@@ -29,10 +29,7 @@ export const getEventsByUser = async (): Promise<ProductData[]> => {
     `${process.env.NEXT_PUBLIC_API_URL}/events/user/${creatorID}`,
     {
       method: "GET",
-      headers: {
-        Authorization: `Bearer ${tokenData.token}`,
-        "Content-Type": "application/json",
-      },
+      headers: { Authorization: `Bearer ${tokenData.token}` },
       cache: "no-store",
     },
   );
@@ -46,6 +43,7 @@ export const getEventsByUser = async (): Promise<ProductData[]> => {
 
   return result.data ?? [];
 };
+
 
 export const getEventbyUserParticipations = async (): Promise<
   JoinEventData[]
