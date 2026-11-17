@@ -30,7 +30,6 @@ export const getEventsByUser = async (): Promise<ProductData[]> => {
     {
       method: "GET",
       headers: { Authorization: `Bearer ${tokenData.token}` },
-      cache: "no-store",
     },
   );
 
@@ -61,7 +60,6 @@ export const getEventbyUserParticipations = async (): Promise<
       `${process.env.NEXT_PUBLIC_API_URL}/events/participations/${joinUserID}`,
       {
         headers: { Authorization: `Bearer ${tokenData.token}` },
-        cache: "no-store",
       },
     );
 
