@@ -12,24 +12,39 @@ export const getProductAPI = async (): Promise<ProductData[]> => {
 
 export const getEventsByUser = async (): Promise<ProductData[]> => {
   const { data: session } = await authClient.getSession();
-  if (!session?.user) throw new Error("Unauthorized");
+
+  if (!session?.user) {
+    throw new Error("Unauthorized: User session not found");
+  }
 
   const creatorID = session.user.id;
 
   const { data: tokenData } = await authClient.token();
-  if (!tokenData?.token) throw new Error("Unauthorized");
 
-  // /events/user/:creatorID
+  if (!tokenData?.token) {
+    throw new Error("Unauthorized: Access token not found");
+  }
+
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/events/user/${creatorID}`,
     {
-      headers: { Authorization: `Bearer ${tokenData.token}` },
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${tokenData.token}`,
+        "Content-Type": "application/json",
+      },
       cache: "no-store",
     },
   );
 
+  if (!res.ok) {
+    const error = await res.json().catch(() => null);
+    throw new Error(error?.message || `Failed to fetch events: ${res.status}`);
+  }
+
   const result = await res.json();
-  return result.data;
+
+  return result.data ?? [];
 };
 
 export const getEventbyUserParticipations = async (): Promise<
